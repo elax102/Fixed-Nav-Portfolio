@@ -1,5 +1,65 @@
-$heading-color: hotpink;
+$c-pink: hotpink;
+$c-black: #424242;
+$c-grey-dark: #757575;
 
-h1 {
-	color: $heading-color;
+// fonts
+$roboto: 'Roboto', sans-serif;
+
+
+// transition
+@mixin transition($prop: all, $time: 0.3s, $curve: cubic-bezier(0.23, 1, 0.32, 1)) {
+	transition: ($prop $time $curve);
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	background-color: #eee;
+}
+
+h1,h2,h3,h4,h5,h6,p,a,li{
+	font-family: "Arial",Helvetica,sans-serif;
+	font-family: $roboto;
+}
+
+.nav{
+	background-color: rgba(255,255,255,0.9);
+	width: 66.6vw;
+	height: 100px;
+	margin: auto;
+	margin-top: 15vh;
+	box-shadow: 0 0 40px #ccc;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 80px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+
+	a{
+		text-decoration: none;
+		color: $c-grey-dark;
+	}
+
+	&-brand{
+		font-size: 30px;
+	}
+
+	&-links{
+		list-style-type: none;
+		display: flex;
+
+		a{
+			padding: 10px 20px;
+			margin: 0 10px;
+			@include transition;
+
+			&:hover{
+				background-color: #eee;
+				@include transition;
+			}
+		}
+	}
 }
