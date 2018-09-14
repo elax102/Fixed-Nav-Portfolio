@@ -1,9 +1,15 @@
+// colors
 $c-pink: hotpink;
+$c-white: #fff;
 $c-black: #424242;
 $c-grey-dark: #757575;
+$c-grey-light: #ccc;
+$c-shadow: rgba(0,0,0,0.20);
+
 
 // fonts
 $roboto: 'Roboto', sans-serif;
+
 
 
 // transition
@@ -15,6 +21,7 @@ body{
 	padding: 0;
 	margin: 0;
 	background-color: #eee;
+	@include transition(background-color, 1.5s);
 }
 
 h1,h2,h3,h4,h5,h6,p,a,li{
@@ -22,13 +29,20 @@ h1,h2,h3,h4,h5,h6,p,a,li{
 	font-family: $roboto;
 }
 
+h1{
+	margin-top: 0;
+}
+
+
+
+// navigation
 .nav{
 	background-color: rgba(255,255,255,0.9);
 	width: 66.6vw;
 	height: 100px;
 	margin: auto;
 	margin-top: 15vh;
-	box-shadow: 0 0 40px #ccc;
+	box-shadow: 0 0 40px $c-shadow;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -37,6 +51,7 @@ h1,h2,h3,h4,h5,h6,p,a,li{
 	left: 0;
 	right: 0;
 	top: 0;
+	z-index: 10;
 
 	a{
 		text-decoration: none;
@@ -63,3 +78,41 @@ h1,h2,h3,h4,h5,h6,p,a,li{
 		}
 	}
 }
+
+
+// sections
+section {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+}
+
+
+
+// cards
+.card{
+	background-color: $c-white;
+	padding: 40px 80px 40px 40px;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 20px $c-shadow;
+	position: absolute;
+
+	p{
+		margin: 0;
+	}
+
+	&-about{
+		top: 33.3vh;
+		left: 25vw;
+	}
+
+	&-project {
+		top: 33.3vh;
+		right: 25vw;
+	}
+}
+
+// .project{
+// 	background-color: blue;
+// }

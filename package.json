@@ -11,7 +11,9 @@
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"dependencies": {},
+	"dependencies": {
+		"waypoints": "^4.0.1"
+	},
 	"devDependencies": {
 		"node-sass": "^4",
 		"@pingy/cli": "^0.13.0"
